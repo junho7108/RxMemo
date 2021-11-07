@@ -53,7 +53,7 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC = target
         }
         
-        return subject.ignoreElements()
+        return subject.ignoreElements().asCompletable()
     }
     
     @discardableResult
