@@ -11,6 +11,15 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
    
     var viewModel: MemoDetailViewModel!
     
+    
+    @IBOutlet weak var listTableView: UITableView!
+    
+    @IBOutlet weak var deleteButton: UIToolbar!
+    
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     func bindViewModel() {
         
     }
