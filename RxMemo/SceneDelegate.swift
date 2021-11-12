@@ -27,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let listScene = Scene.list(listViewModel)
 
         coordinator.transition(to: listScene, using: .root, animated: false)
-//
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
