@@ -16,7 +16,7 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
     
     @IBOutlet weak var listTableView: UITableView!
     
-    @IBOutlet weak var deleteButton: UIToolbar!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -55,6 +55,8 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
         
             
         editButton.rx.action = viewModel.makeEditAction()
+        
+        deleteButton.rx.action = viewModel.makeDeleteAction()
     
         shareButton.rx.tap
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
