@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let storage = MemoryStorage()
+        //let storage = MemoryStorage()
+        let storage = CoreDataStorage(modelName: "RxMemo")
         let coordinator = SceneCoordinator(window: window!)
 
 
