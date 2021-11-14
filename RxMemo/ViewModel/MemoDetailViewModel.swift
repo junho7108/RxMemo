@@ -11,7 +11,7 @@ import RxCocoa
 import Action
 
 class MemoDetailViewModel: CommonViewModel {
-    let memo: Memo
+    var memo: Memo
     
     private let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -44,11 +44,13 @@ class MemoDetailViewModel: CommonViewModel {
         return Action<String, Void> { input in
             self.storage.update(memo: memo, content: input)
                 .subscribe(onNext: { updated in
+                    
+                    self.memo = updated
+                    
                     self.contents.onNext([
                         updated.content,
                         self.dateFormatter.string(from: updated.insertDate)
                     ])
-                    
                 })
                 .disposed(by: self.rx.disposeBag)
             
